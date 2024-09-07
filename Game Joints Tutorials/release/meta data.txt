@@ -1,0 +1,5 @@
+alias - utopiags
+pass  - usiaja87354bvmxjdh
+
+privacy: https://doc-hosting.flycricket.io/joints-tutorials-privacy-policy/7e8242be-38ae-40e2-9f4e-6b78a65f578f/privacy
+terms  : https://doc-hosting.flycricket.io/joints-tutorials-terms-of-use/bc5ec95f-3a4b-408c-af2c-d29ce5cf374a/terms
