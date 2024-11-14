@@ -88,4 +88,26 @@ class Mask(
         setBlendFunction(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA)
     }
 
+    private fun Texture.combineByCenter(texture: Texture): Texture {
+        if (textureData.isPrepared.not()) textureData.prepare()
+        val pixmap1 = textureData.consumePixmap()
+
+        if (texture.textureData.isPrepared.not()) texture.textureData.prepare()
+        val pixmap2 = texture.textureData.consumePixmap()
+
+        pixmap1.drawPixmap(pixmap2,
+            (width / 2) - (texture.width / 2),
+            (height / 2) - (texture.height / 2),
+        )
+        val textureResult = Texture(pixmap1)
+
+        if (pixmap1.isDisposed.not()) pixmap1.dispose()
+        if (pixmap2.isDisposed.not()) pixmap2.dispose()
+
+        dispose()
+        texture.dispose()
+
+        return textureResult
+    }
+
 }
